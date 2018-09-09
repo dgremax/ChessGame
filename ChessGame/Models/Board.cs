@@ -86,9 +86,11 @@ namespace ChessGame.Models {
         }
 
         public void PrintBoard() {
+            Console.WriteLine("  01234567\n");
             for(int i = 0; i < TheDim; i++) {
+                Console.Write(i + " ");
                 for(int j = 0; j < TheDim; j++) {
-                    if (TheBoard[i, j] == null) Console.Write('-');
+                    if (TheBoard[i, j] == null) Console.Write(' ');
                     else Console.Write(TheBoard[i,j].Symbol);
                 }
                 Console.WriteLine();

@@ -21,8 +21,43 @@ namespace ChessGame.Models {
         }
 
         public bool Move(int toAPos, int toBPos, Board theBoard) {
+            // | toAPos - APos | + | toBPos - BPos | == 3
+            if (Math.Abs(toAPos - APos) + Math.Abs(toBPos - BPos) == 3) {
+                // Valid move
+                if (theBoard.TheBoard[toAPos, toBPos] == null) {
+                    // Move piece to this spot
+                    //Console.WriteLine("Moved to an empty space.");
+                    theBoard.TheBoard[this.APos, this.BPos] = null;
 
-            return true;
+                    // Remove APos and BPos fields?
+                    this.APos = toAPos;
+                    this.BPos = toBPos;
+
+                    theBoard.TheBoard[toAPos, toBPos] = this;
+                    return true;
+                }
+                else if (theBoard.TheBoard[toAPos, toBPos].Color != Color) {
+                    // Landed on enemy piece; capture the piece
+                    //Console.WriteLine("Captured an enemy piece.");
+                    theBoard.TheBoard[this.APos, this.BPos] = null;
+
+                    // Remove APos and BPos fields?
+                    this.APos = toAPos;
+                    this.BPos = toBPos;
+
+                    theBoard.TheBoard[toAPos, toBPos] = this;
+                    return true;
+                }
+                else {
+                    // Landed on a friendly piece
+                    //Console.WriteLine("Landed on a friendly piece.");
+                    return false;
+                }
+            }
+            else {
+                Console.WriteLine("Math.Abs(" + toAPos + " - " + APos + ") + Math.Abs(" + toBPos + " - " + BPos + ") = " + Math.Abs(toAPos - APos) + Math.Abs(toBPos - BPos));
+                return false;
+            }
         }
     }
 }

@@ -21,8 +21,23 @@ namespace ChessGame.Models {
         }
 
         public bool Move(int toAPos, int toBPos, Board theBoard) {
-            if(APos == toAPos || BPos == toBPos) {
-                // Valid move
+            int pathPosA = APos, pathPosB = BPos;
+
+            if (APos == toAPos || BPos == toBPos) {
+                // Valid direction - check if path to destination is clear
+                if(APos == toAPos) {
+                    // Movement is in vertical direction
+                    while (theBoard.TheBoard[pathPosA, pathPosB] == null) {
+
+                    }
+                }
+                else {
+                    // Movement is in horizontal direction
+                    while (theBoard.TheBoard[pathPosA, pathPosB] == null) {
+
+                    }
+                }
+                
             }
             
             return true;

@@ -32,7 +32,9 @@ namespace ChessGame.Models {
                     || ((toAPos == APos + 1) && toBPos == BPos - 1)
                     || ((toAPos == APos + 2) && toBPos == BPos)) {
                     // check if attack move
-                    if(((toAPos == APos + 1) && toBPos == BPos + 1) || ((toAPos == APos + 1) && toBPos == BPos - 1)) {
+                    if(((toAPos == APos + 1) && toBPos == BPos + 1) 
+                        || ((toAPos == APos + 1) && toBPos == BPos - 1)) {
+
                         
 
                     }
