@@ -8,24 +8,18 @@ namespace ChessGame.Models {
     class Rook : IPiece {
         public int Color { get; set; }
         public char Symbol { get; set; }
-        public bool IsCaptured { get; set; }
-        public int APos { get; set; }
-        public int BPos { get; set; }
 
-        public Rook(int theColor, int theAPos, int theBPos) {
-            APos = theAPos;
-            BPos = theBPos;
+        public Rook(int theColor) {
             Color = theColor;
-            IsCaptured = false;
             Symbol = 'R';
         }
 
-        public bool Move(int toAPos, int toBPos, Board theBoard) {
-            int pathPosA = APos, pathPosB = BPos;
+        public bool Move(int fromAPos, int fromBPos, int toAPos, int toBPos, Board theBoard) {
+            int pathPosA = fromAPos, pathPosB = fromBPos;
 
-            if (APos == toAPos || BPos == toBPos) {
+            if (fromAPos == toAPos || fromBPos == toBPos) {
                 // Valid direction - check if path to destination is clear
-                if(APos == toAPos) {
+                if(fromAPos == toAPos) {
                     // Movement is in vertical direction
                     while (theBoard.TheBoard[pathPosA, pathPosB] == null) {
 

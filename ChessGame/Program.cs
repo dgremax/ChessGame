@@ -42,7 +42,7 @@ namespace ChessGame {
                 }
 
                 // Pass input to function
-                if (!selectedPiece.Move(toAPos, toBPos, theBoard)) {
+                if (!selectedPiece.Move(fromAPos, fromBPos, toAPos, toBPos, theBoard)) {
                     Console.WriteLine("Invalid move!") ;
                 }
 

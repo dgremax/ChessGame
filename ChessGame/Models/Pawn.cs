@@ -5,35 +5,28 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ChessGame.Models {
-
     class Pawn : IPiece {
         public int Color { get; set; }
         public char Symbol { get; set; }
-        public bool IsCaptured { get; set; }
-        public int APos { get; set; }
-        public int BPos { get; set; }
 
-        public Pawn(int theColor, int theAPos, int theBPos) {
-            APos = theAPos;
-            BPos = theBPos;
+        public Pawn(int theColor) {
             Color = theColor;
-            IsCaptured = false;
             Symbol = 'P';
         }
 
-        public bool Move(int toAPos, int toBPos, Board theBoard) {
+        public bool Move(int fromAPos, int fromBPos, int toAPos, int toBPos, Board theBoard) {
 
             if (Color == 0) {
                 // BLACK - can only move DOWN
 
                 // Check if move is legal
-                if (((toAPos == APos + 1) && toBPos == BPos)
-                    || ((toAPos == APos + 1) && toBPos == BPos + 1)
-                    || ((toAPos == APos + 1) && toBPos == BPos - 1)
-                    || ((toAPos == APos + 2) && toBPos == BPos)) {
+                if (((toAPos == fromAPos + 1) && toBPos == fromBPos)
+                    || ((toAPos == fromAPos + 1) && toBPos == fromBPos + 1)
+                    || ((toAPos == fromAPos + 1) && toBPos == fromBPos - 1)
+                    || ((toAPos == fromAPos + 2) && toBPos == fromBPos)) {
                     // check if attack move
-                    if(((toAPos == APos + 1) && toBPos == BPos + 1) 
-                        || ((toAPos == APos + 1) && toBPos == BPos - 1)) {
+                    if(((toAPos == fromAPos + 1) && toBPos == fromBPos + 1) 
+                        || ((toAPos == fromAPos + 1) && toBPos == fromBPos - 1)) {
 
                         
 

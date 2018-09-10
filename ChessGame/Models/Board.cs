@@ -22,11 +22,11 @@ namespace ChessGame.Models {
                     for (int j = 0; j < TheDim; j++) {
                         if(i == 1) {
                             // Add black pawns
-                            TheBoard[i,j] = new Pawn(0,i,j);
+                            TheBoard[i,j] = new Pawn(0);
                         }
                         else {
                             // Add white pawns
-                            TheBoard[i,j] = new Pawn(1,i,j);
+                            TheBoard[i,j] = new Pawn(1);
                         }
                     }
                 }
@@ -37,46 +37,46 @@ namespace ChessGame.Models {
                             // Add black pieces
                             if(j == 0 || j == 7) {
                                 // Add rook
-                                TheBoard[i, j] = new Rook(0, i, j);
+                                TheBoard[i, j] = new Rook(0);
                             }
                             else if (j == 1 || j == 6) {
                                 // Add knight
-                                TheBoard[i, j] = new Knight(0, i, j);
+                                TheBoard[i, j] = new Knight(0);
                             }
                             else if (j == 2 || j == 5) {
                                 // Add bishop
-                                TheBoard[i, j] = new Bishop(0, i, j);
+                                TheBoard[i, j] = new Bishop(0);
                             }
                             else if (j == 3) {
                                 // Add queen
-                                TheBoard[i, j] = new Queen(0, i, j);
+                                TheBoard[i, j] = new Queen(0);
                             }
                             else {
                                 // Add king
-                                TheBoard[i, j] = new King(0, i, j);
+                                TheBoard[i, j] = new King(0);
                             }
                         }
                         else {
                             // Add white pieces
                             if (j == 0 || j == 7) {
                                 // Add rook
-                                TheBoard[i, j] = new Rook(1, i, j);
+                                TheBoard[i, j] = new Rook(1);
                             }
                             else if (j == 1 || j == 6) {
                                 // Add knight
-                                TheBoard[i, j] = new Knight(1, i, j);
+                                TheBoard[i, j] = new Knight(1);
                             }
                             else if (j == 2 || j == 5) {
                                 // Add bishop
-                                TheBoard[i, j] = new Bishop(1, i, j);
+                                TheBoard[i, j] = new Bishop(1);
                             }
                             else if (j == 3) {
                                 // Add queen
-                                TheBoard[i, j] = new Queen(1, i, j);
+                                TheBoard[i, j] = new Queen(1);
                             }
                             else {
                                 // Add king
-                                TheBoard[i, j] = new King(1, i, j);
+                                TheBoard[i, j] = new King(1);
                             }
                         }
                     }
