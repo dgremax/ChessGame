@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 namespace ChessGame.Models {
     class Rook : IPiece {
         public int Color { get; set; }
-        public char Symbol { get; set; }
+        public string Symbol { get; set; }
+        public bool HasMoved;
 
         public Rook(int theColor) {
             Color = theColor;
-            Symbol = 'R';
+            Symbol = theColor == 0 ? "BR" : "WR";
+            HasMoved = false;
         }
 
         public bool Move(int fromAPos, int fromBPos, int toAPos, int toBPos, Board theBoard) {

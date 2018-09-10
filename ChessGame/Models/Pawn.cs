@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 namespace ChessGame.Models {
     class Pawn : IPiece {
         public int Color { get; set; }
-        public char Symbol { get; set; }
+        public string Symbol { get; set; }
+        public bool HasMoved;
 
         public Pawn(int theColor) {
             Color = theColor;
-            Symbol = 'P';
+            Symbol = theColor == 0 ? "BP" : "WP";
+            HasMoved = false;
         }
 
         public bool Move(int fromAPos, int fromBPos, int toAPos, int toBPos, Board theBoard) {

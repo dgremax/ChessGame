@@ -13,6 +13,8 @@ namespace ChessGame {
             IPiece selectedPiece = null;
             int fromAPos = -1, fromBPos = -1, toAPos = -1, toBPos = -1;
 
+            string[] userInput;
+
             theBoard.PrintBoard();
             Console.WriteLine();
 
@@ -20,15 +22,25 @@ namespace ChessGame {
                 while(fromAPos < 0 || fromAPos > 7 || fromBPos < 0 || fromBPos > 7
                     || toAPos < 0 || toAPos > 7 || toBPos < 0 || toBPos > 7) {
 
-                    Console.Write("A src: ");
-                    fromAPos = Convert.ToInt32(Console.ReadLine());
-                    Console.Write("B src: ");
-                    fromBPos = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("From <A,B>: ");
+                    userInput = Console.ReadLine().Split(',');
+                    fromAPos = Convert.ToInt32(userInput[0]);
+                    fromBPos = Convert.ToInt32(userInput[1]);
 
-                    Console.Write("A dest: ");
-                    toAPos = Convert.ToInt32(Console.ReadLine());
-                    Console.Write("B dest: ");
-                    toBPos = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("To <A,B>: ");
+                    userInput = Console.ReadLine().Split(',');
+                    toAPos = Convert.ToInt32(userInput[0]);
+                    toBPos = Convert.ToInt32(userInput[1]);
+
+                    //Console.Write("A src: ");
+                    //fromAPos = Convert.ToInt32(Console.ReadLine());
+                    //Console.Write("B src: ");
+                    //fromBPos = Convert.ToInt32(Console.ReadLine());
+
+                    //Console.Write("A dest: ");
+                    //toAPos = Convert.ToInt32(Console.ReadLine());
+                    //Console.Write("B dest: ");
+                    //toBPos = Convert.ToInt32(Console.ReadLine());
 
                     //Console.WriteLine("Values:\nfromAPos: " + fromAPos + ", fromBPos: " + fromBPos + "\ntoAPos: " + toAPos + ", toBPos: " + toBPos);
                 }

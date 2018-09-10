@@ -86,12 +86,12 @@ namespace ChessGame.Models {
         }
 
         public void PrintBoard() {
-            Console.WriteLine("  01234567\n");
+            Console.WriteLine("   00 01 02 03 04 05 06 07\n");
             for(int i = 0; i < TheDim; i++) {
-                Console.Write(i + " ");
+                Console.Write("0" + i + ' ');
                 for(int j = 0; j < TheDim; j++) {
-                    if (TheBoard[i, j] == null) Console.Write(' ');
-                    else Console.Write(TheBoard[i,j].Symbol);
+                    if (TheBoard[i, j] == null) Console.Write("   ");
+                    else Console.Write(TheBoard[i,j].Symbol + ' ');
                 }
                 Console.WriteLine();
             }
