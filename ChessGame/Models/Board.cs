@@ -22,11 +22,11 @@ namespace ChessGame.Models {
                     for (int j = 0; j < TheDim; j++) {
                         if(i == 1) {
                             // Add black pawns
-                            TheBoard[i,j] = new Pawn(0);
+                            TheBoard[i, j] = new Pawn(0);
                         }
                         else {
                             // Add white pawns
-                            TheBoard[i,j] = new Pawn(1);
+                            TheBoard[i, j] = new Pawn(1);
                         }
                     }
                 }
@@ -86,9 +86,9 @@ namespace ChessGame.Models {
         }
 
         public void PrintBoard() {
-            Console.WriteLine("   00 01 02 03 04 05 06 07\n");
+            Console.WriteLine("    0  1  2  3  4  5  6  7\n");
             for(int i = 0; i < TheDim; i++) {
-                Console.Write("0" + i + ' ');
+                Console.Write(" " + i + ' ');
                 for(int j = 0; j < TheDim; j++) {
                     if (TheBoard[i, j] == null) Console.Write("   ");
                     else Console.Write(TheBoard[i,j].Symbol + ' ');
